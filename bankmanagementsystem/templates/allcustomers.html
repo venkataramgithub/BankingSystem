@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-title">
+	<p>All Customers</p>
+	<h4>Home/<span>Customers</span></h4>
+</div>
+<div class="customers-table">
+		<table>
+			<thead>
+				<tr>
+					<th>Customerid</th>
+					<th>CustomerName</th>
+					<th>Date Of Birth</th>
+					<th>Gender</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Aadhar Number</th>
+					<th>Postal Address</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in form %}
+					<tr>
+						<td>{{row.Customer_id}}</td>
+						<td>{{row.CustomerName}}</td>
+						<td>{{row.DOB}}</td>
+						<td>{{row.Gender}}</td>
+						<td>{{row.Email}}</td>
+						<td>{{row.Phone}}</td>
+						<td>{{row.AadharNumber}}</td>
+						<td>{{row.PostalAddress}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BankingSystem</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<script type="text/javascript" src="{%static 'js/script.js' %}"></script>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<i class="fas fa-university"></i>
+			<h2>YR<span> Banking System</span></h2>
+		</div>
+		<div class="details">
+			<i class=""></i>
+			<p>india</p>
+			<i class="fas fa-bell"></i>
+			<h4>Yeruva Venkata Ramulu<i class="fas fa-chevron-up" onclick="showfunction()"></i></h4>
+			<i class="fas fa-user-circle"></i>
+		</div>
+	</header>
+	<div class="user-details" id="user-details">
+		<p>Yeruva Venkata Ramulu</p>
+		<span>View Profile</span><br>
+		<span><a href="/logout/">LogOut</a></span>
+	</div>
+	<div class="navbar">
+		<ul>
+			<li><a href="/home/"><span class="material-symbols-outlined">dashboard</span>Dashboard</a></li>
+			<li><a href="/balancecheck/"><span class="material-symbols-outlined">account_balance_wallet</span>Check Balance</a></li>
+			<li><a href="/customerinfo/"><i class="fas fa-user"></i>Customer Info</a></li>
+			<li><a href="/createaccount"><i class="fas fa-id-badge" style="margin-right:10px;"></i>Create Account</a></li>
+			<li><a href="/withdrawl/"><i class="fas fa-id-badge"></i>WithDrawl</a></li>
+			<li><a href="/deposit/"><i class="fas fa-id-badge"></i>Deposit</a></li>
+			<li><a href="/transfer/"><i class="fas fa-id-badge"></i>Transfer</a></li>
+			<li><a href="/viewapprovedtransaction/"><i class="fas fa-credit-card"></i>Complete Transaction</a></li>
+			<li><a href="/debitcard/"><i class="fas fa-credit-card"></i>Debit Card</a></li>
+			<li><a href="/applyloan/"><span class="material-symbols-outlined">real_estate_agent</span>Apply Loan</a></li>
+			<li><a href="/allcustomers/"><i class="fas fa-users"></i>Customers</a></li>
+			<li><a href="/alltransactions/"><span class="material-symbols-outlined">receipt_long</span>All Transactions</a></li>
+			<li><a href="/updateaccount/"><i class="fas fa-id-badge"></i>Update Account</a></li>
+		</ul>
+	</div>
+	<section class="container">
+	{% block content %}
+
+	{% endblock %}	
+	</section>
+</body>
+</html>

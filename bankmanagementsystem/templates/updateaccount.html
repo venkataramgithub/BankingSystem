@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-title">
+	<p>Update Accounts</p>
+	<h4>Home/<span>Update Accounts</span></h4>
+</div>
+<div class="update-page">
+	<form method="post" action="/updateaccount/" autocomplete="off" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input type="search" name="search" placeholder="Enter To View Account Details" required>
+		<button><i class="fas fa-search"></i></button>
+	</form>
+</div>
+<div class="account-details"> 
+	<form method="post" action="" enctype="multipart/form-data" autocomplete="off">
+		<div class="form-group">
+			<label>Customer Id</label>
+			<input type="text" name="customerid" value="{{form.Customer_id}}">
+		</div>
+		<div class="form-group">
+			<label>Account Number</label>
+			<input type="text" name="accountnumber" value="{{form.AccountNumber}}">
+		</div>
+		<div class="form-group">
+			<label>Customer Name</label>
+			<input type="text" name="customername" value="{{customerform.CustomerName}}">
+		</div>
+		<div class="form-group">
+			<label>Email</label>
+			<input type="email" name="email" value="{{customerform.Email}}">
+		</div>
+		<div class="form-group">
+			<label>Phone</label>
+			<input type="tel" name="phone" value="{{customerform.Phone}}">
+		</div>
+		<div class="form-group">
+			<label>Account Status</label>
+			<input type="text" name="status" value="{{form.AccountStatus}}">
+		</div>
+		<div class="form-group">
+			<label>Initial Deposit</label>
+			<input type="text" name="initialdeposit" value="{{form.initialDeposit}}">
+		</div>
+		<div class="form-group">
+			<label>Aadhar Number</label>
+			<input type="text" name="aadharnumber" value="{{customerform.AadharNumber}}">
+		</div>
+		<div class="account-profile">
+			<p>Profile Picture</p>
+			<p><img src="/static/uploaded/{{form.ProfilePicture}}"></p>
+			<input type="file" name="pictureimg">
+		</div>
+		<button>Update Account</button>
+	</form>
+</div>
+{% endblock %}

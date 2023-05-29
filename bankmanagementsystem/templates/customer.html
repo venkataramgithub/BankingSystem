@@ -1,0 +1,83 @@
+{% extends 'index.html' %}
+{% block content %}
+	{% if messages %}
+		{% for message in messages %}
+			<div class="message-box" id="message-box">
+				<h3>Banking System:says</h3>
+				<p>{{message}}</p><span onclick="hidemessage()">OK</span></div>
+		{% endfor %}
+	{% endif %}
+<div class="page-title">
+	<p>Create CustomerInfo</p>
+	<h4>Home/<span>Customer Info</span></h4>
+</div>
+<div class="account-form">
+	<form method="post" action="/customerinfo/" enctype="multipart/form-data" autocomplete="off">
+		{% csrf_token %}
+		<div class="form-group">
+			<label>CustomerId</label>
+			<input type="text" name="customerid" placeholder="Enter CustomerId" required>
+		</div>
+		<div class="form-group">
+			<label>Customer Name</label>
+			<input type="text" name="customername" placeholder="Enter Customer Name" required>
+		</div>
+		<div class="form-group">
+			<label>Date Of Birth</label>
+			<input type="date" name="dateofbirth" required>
+		</div>
+		<div class="form-group">
+			<label>Gender</label>
+			<select name="gender" required>
+				<option>Select Gender</option>
+				<option>Male</option>
+				<option>Female</option>
+				<option>Others</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Customer Email</label>
+			<input type="email" name="email" placeholder="Enter Email Address" required>
+		</div>
+		<div class="form-group">
+			<label>Customer Phone</label>
+			<input type="number" name="phone" placeholder="Enter Customer Phone" required>
+		</div>
+		<div class="form-group">
+			<label>Street</label>
+			<input type="text" name="street" placeholder="Enter Street" required>
+		</div>
+		<div class="form-group">
+			<label>City</label>
+			<input type="text" name="city" placeholder="Enter City" required>
+		</div>
+		<div class="form-group">
+			<label>State</label>
+			<input type="text" name="State" placeholder="Enter State" required>
+		</div>
+		<div class="form-group">
+			<label>PinCode</label>
+			<input type="number" name="pincode" placeholder="Enter PinCode" required>
+		</div>
+		<div class="form-group">
+			<label>Aadhar Number</label>
+			<input type="text" name="aadharnumber" placeholder="Enter Aadhar Number" required>
+		</div>
+		<div class="form-group">
+			<label>Postal Address</label>
+			<input type="text" name="postaladdress" placeholder="Enter Postal Address" required>
+		</div>
+		<div class="form-group">
+			<label>Nationality</label>
+			<select name="nationality" required>
+				<option>Select Nationality</option>
+				<option>Hindu</option>
+				<option>Christian</option>
+				<option>Muslium</option>
+				<option>Others</option>
+			</select>
+		</div>
+		<button>submit</button>
+	</form>
+</div>
+{% endblock %}

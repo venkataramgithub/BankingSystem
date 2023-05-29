@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Banking System</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{%static 'css/login.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<script type="text/javascript" src="{%static 'js/script.js' %}"></script>
+</head>
+<body>
+	<section>
+		<div class="top">
+		</div>
+		<div class="right">
+		</div>
+		<div class="login-form">
+			{% if messages %}
+				{% for message in messages %}
+					<div class="alert-box">{{message}}</div>
+				{% endfor %}
+			{% endif %}
+			<i class="fas fa-university"></i>
+			<p>Welcom to Admin Login </p>
+			<form method="post" action="" enctype="multipart/form-data" autocomplete="off">
+				{% csrf_token %}
+				<div class="form-group">
+					<p><i class="fas fa-user-circle"></i><input type="text" name="username" placeholder="Enter Your Name"></p>
+				</div>
+				<div class="form-group">
+					<p><i class="fas fa-key"></i><input type="password" id="password" placeholder="Enter Your Password" name="password"></p>
+					<span id="eyeopen"><i class="fas fa-eye" onclick="showpassword()"></i></span><span id="eyeclose"><i class="fas fa-eye-slash" onclick="showpassword()"></i></span>
+				</div>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+	</section>
+</body>
+</html>

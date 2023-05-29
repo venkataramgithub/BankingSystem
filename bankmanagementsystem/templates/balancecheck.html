@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-title">
+	<p>Check Balance & Status</p>
+	<h4>Home/<span>Check Balance</span></h4>
+</div>
+<div class="balance-box">
+	<form method="post" action="" enctype="multipart/form-data" autocomplete="off">
+		{% csrf_token %}
+		<input type="search" name="accountno" placeholder="Enter Account No to search balance And Status">
+		<button><i class="fas fa-search"></i></button>
+	</form>
+</div>
+<div class="balance-table">
+	<p>Balance & Status</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Account No</th>
+				<th>Account Holder Name</th>
+				<th>Balance</th>
+				<th>Account Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if form and customerform %}
+			<tr>
+				<td>{{form.AccountNumber}}</td>
+				<td>{{customerform.CustomerName}}</td>
+				<td>{{form.Balance}}/-</td>
+				<td>{{form.AccountStatus}}</td>
+			</tr>
+			{% endif %}
+		</tbody>
+	</table>
+</div>
+{% endblock %}

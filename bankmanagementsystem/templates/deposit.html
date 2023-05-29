@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% block content %}
+{% if messages %}
+		{% for message in messages %}
+			<div class="message-box" id="message-box">
+				<h3>Banking System:says</h3>
+				<p>{{message}}</p><span onclick="hidemessage()">OK</span></div>
+		{% endfor %}
+	{% endif %}
+<div class="page-title">
+	<p>Amount Deposit</p>
+	<h4>Home/<span>Deposit</span></h4>
+</div>
+<div class="balance-box">
+	<form method="post" action="" enctype="multipart/form-data" autocomplete="off">
+		{% csrf_token %}
+		<input type="search" name="accountno" placeholder="Enter Account Number">
+		<button><i class="fas fa-search"></i></button>
+	</form>
+</div>
+<div class="balance-table">
+	<table>
+		<thead>
+			<tr>
+				<th>Account No</th>
+				<th>Account Holder Name</th>
+				<th>Balance</th>
+				<th>Deposit Amount</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<form method="post" action="/completedeposit/" enctype="multipart/form-data"> 
+				{% csrf_token %}
+			<tr>
+				<td><input type="text" name="accountno" value="{{form.AccountNumber}}" style="outline: none;border: 1px solid rgba(0, 0, 0,.3);padding: 8px;width:100%;height:25px;"></td>
+				<td><input type="text" name="custormername" value="{{customerform.CustomerName}}" style="outline: none;border: 1px solid rgba(0, 0, 0,.3);padding: 8px;width:100%;height:25px;"></td>
+				<td><input type="text" name="balance" value="{{form.Balance}}" style="outline: none;border: 1px solid rgba(0, 0, 0,.3);padding: 8px;width:100%;height:25px;"></td>
+				<td><input type="text" name="amount" placeholder="Enter Deposit Amount" style="outline: none;border: 1px solid rgba(0, 0, 0,.3);padding: 8px;width:100%;height:25px;"></td>
+				<td><button style="outline: none;border: 1px solid rgba(0, 0, 0,.3);font-size:18px;padding:5px;width:100%;height:35px;">submit</button></td>
+			</tr>
+		</form>
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}

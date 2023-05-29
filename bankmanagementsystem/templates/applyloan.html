@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block content %}
+{% if messages %}
+		{% for message in messages %}
+			<div class="message-box" id="message-box">
+				<h3>Banking System:says</h3>
+				<p>{{message}}</p><span onclick="hidemessage()">OK</span></div>
+		{% endfor %}
+	{% endif %}
+<div class="page-title">
+	<p>Apply Loan</p>
+	<h4>Home/<span>loan</span></h4>
+</div>
+<div class="account-form" id="loancreation">
+	<form method="post" action="/applyloan/" enctype="multipart/form-data" autocomplete="off">
+		{% csrf_token %}
+		<div class="form-group">
+			<label>Account Number</label>
+			<input type="text" name="accountnumber" placeholder="Enter Account Number" required>
+		</div>
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" name="name" placeholder="Enter Name" required>
+		</div>
+		<div class="form-group">
+			<label>Loan Type</label>
+			<select name="loantype" required>
+				<option>Select Loan Type</option>
+				<option>Personal Loan</option>
+				<option>Gold Loan</option>
+				<option>House Loan</option>
+				<option>Education Loan</option>
+				<option>Car Loan</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label>Amount</label>
+			<input type="text" name="amount" placeholder="Enter Loan Amount" required>
+		</div>
+		<div class="form-group">
+			<label>Document 1</label>
+			<input type="file" name="file1" required>
+		</div>
+		<div class="form-group">
+			<label>Document 2</label>
+			<input type="file" name="file2" required>
+		</div>
+		<button>submit</button>
+	</form>
+</div>
+{% endblock %}

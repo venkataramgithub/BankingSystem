@@ -1,0 +1,111 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="page-title">
+	<p>View Approved Transactions</p>
+	<h4>Home/<span>View Approved Transactions</span></h4>
+</div>
+<div class="list-bar">
+	<p onclick="debitfunction()">Withdrawl Transactions</p>
+	<p onclick="creditfunction()">Deposit Transactions</p>
+	<p onclick="transferfunction()">Trasfer Transactions</p>
+	<p onclick="loanfunction()">Loans</p>
+</div>
+<div class="transactions-list">
+	<div class="debit-table" id="debit-table">
+		<table>
+			<thead>
+				<tr>
+					<th>Customerid</th>
+					<th>AccountNumber</th>
+					<th>Amount</th>
+					<th>Transaction Type</th>
+					<th>Approve</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in form %}
+					<tr>
+						<td>{{row.Customer_id}}</td>
+						<td>{{row.AccountNumber}}</td>
+						<td>{{row.Amount}}</td>
+						<td>{{row.TransactionType}}</td>
+						<td><a href="/depositclear/{{row.AccountNumber}}/{{row.Amount}}/{{row.id}}"><button>Approve</button></a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="loan-table" id="loan-table">
+		<table>
+			<thead>
+				<tr>
+					<th>Customerid</th>
+					<th>AccountNumber</th>
+					<th>Name</th>
+					<th>Loan Type</th>
+					<th>Amount</th>
+					<th>Approve</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row1 in form1 %}
+					<tr>
+						<td>{{row1.Customer_id}}</td>
+						<td>{{row1.AccountNumber}}</td>
+						<td>{{row1.Name}}</td>
+						<td>{{row1.LoanType}}</td>
+						<td>{{row1.Amount}}</td>
+						<td><a href="/approveloan/{{row1.AccountNumber}}/{{row1.Amount}}/{{row1.id}}"><button>Approve</button></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="credit-table" id="credit-table">
+		<table>
+			<thead>
+				<tr>
+					<th>Customerid</th>
+					<th>AccountNumber</th>
+					<th>Amount</th>
+					<th>Transaction Type</th>
+					<th>Approve</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row2 in form2 %}
+					<tr>
+						<td>{{row2.Customer_id}}</td>
+						<td>{{row2.AccountNumber}}</td>
+						<td>{{row2.Amount}}</td>
+						<td>{{row2.TransactionType}}</td>
+						<td><a href="/withdrawclear/{{row2.AccountNumber}}/{{row2.Amount}}/{{row2.id}}"><button>Approve</button></a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="transfer-table" id="transfer-table">
+		<table>
+			<thead>
+				<tr>
+					<th>From Account Number</th>
+					<th>To Account Number</th>
+					<th>Amount</th>
+					<th>Approve</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row3 in form3 %}
+					<tr>
+						<td>{{row3.FromNumber}}</td>
+						<td>{{row3.ToNumber}}</td>
+						<td>{{row3.Amount}}</td>
+						<td><a href="/cleartransfer/{{row3.FromNumber}}/{{row3.ToNumber}}/{{row3.Amount}}/{{row3.id}}"><button>Approve</button></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock %}
