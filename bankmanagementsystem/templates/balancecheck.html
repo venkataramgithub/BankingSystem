@@ -1,5 +1,14 @@
 {% extends 'index.html' %}
 {% block content %}
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert-box" id="alert-box">
+			<p>Yr Banking System:&ensp;Says</p>
+			<div>{{message}}</div>
+			<button onclick="showform()">OK</button>
+		</div>
+	{% endfor %}
+{% endif %}
 <div class="page-title">
 	<p>Check Balance & Status</p>
 	<h4>Home/<span>Check Balance</span></h4>

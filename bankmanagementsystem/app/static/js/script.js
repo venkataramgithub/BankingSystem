@@ -38,48 +38,48 @@ function hidemessage(){
 }
 
 function debitfunction(){
-	deposit=document.getElementById("debit-table").style;
-	loan=document.getElementById("loan-table").style;
-	withdrawl=document.getElementById("credit-table").style;
-	transfer=document.getElementById("transfer-table").style;
-	withdrawl.display="block";
-	deposit.display="none";
-	transfer.display="none";
-	loan.display="none";
+	document.getElementById("debit-table").style.display="none";
+	document.getElementById("loan-table").style.display="none";
+	document.getElementById("credit-table").style.display="block";
+	document.getElementById("transfer-table").style.display="none";
+	document.getElementById("1").style.color="orange";
+	document.getElementById("2").style.color="black";
+	document.getElementById("3").style.color="black";
+	document.getElementById("4").style.color="black";
 }
 
 function creditfunction() {
-	deposit=document.getElementById("debit-table").style;
-	loan=document.getElementById("loan-table").style;
-	withdrawl=document.getElementById("credit-table").style;
-	transfer=document.getElementById("transfer-table").style;
-	withdrawl.display="none";
-	deposit.display="block";
-	transfer.display="none";
-	loan.display="none";
+	document.getElementById("debit-table").style.display="block";
+	document.getElementById("loan-table").style.display="none";
+	document.getElementById("credit-table").style.display="none";
+	document.getElementById("transfer-table").style.display="none";
+	document.getElementById("1").style.color="black";
+	document.getElementById("2").style.color="orange";
+	document.getElementById("3").style.color="black";
+	document.getElementById("4").style.color="black";
 }
 
 function transferfunction(){
-	deposit=document.getElementById("debit-table").style;
-	loan=document.getElementById("loan-table").style;
-	withdrawl=document.getElementById("credit-table").style;
-	transfer=document.getElementById("transfer-table").style;
-	withdrawl.display="none";
-	deposit.display="none";
-	transfer.display="block";
-	loan.display="none";
+	document.getElementById("debit-table").style.display="none";
+	document.getElementById("loan-table").style.display="none";
+	document.getElementById("credit-table").style.display="none";
+	document.getElementById("transfer-table").style.display="block";
+	document.getElementById("1").style.color="black";
+	document.getElementById("2").style.color="black";
+	document.getElementById("3").style.color="orange";
+	document.getElementById("4").style.color="black";
 }
 
 function loanfunction(){
-	deposit=document.getElementById("debit-table").style;
-	loan=document.getElementById("loan-table").style;
-	withdrawl=document.getElementById("credit-table").style;
-	transfer=document.getElementById("transfer-table").style;
-	withdrawl.display="none";
-	deposit.display="none";
-	transfer.display="none";
-	loan.display="block";
+	document.getElementById("debit-table").style.display="none";
+	document.getElementById("loan-table").style.display="block";
+	document.getElementById("credit-table").style.display="none";
+	document.getElementById("transfer-table").style.display="none";
+	document.getElementById("1").style.color="black";
+	document.getElementById("2").style.color="black";
+	document.getElementById("3").style.color="black";
+	document.getElementById("4").style.color="orange";
 }
 function showform(){
-	alert("working");
+	document.getElementById("alert-box").style.display="none";
 }

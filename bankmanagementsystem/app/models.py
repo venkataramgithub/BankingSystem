@@ -95,6 +95,7 @@ class Employee(models.Model):
 	Email=models.EmailField(max_length=250)
 	Password=models.CharField(max_length=250)
 	JobDescription=models.CharField(max_length=250)
+	status=models.CharField(max_length=250,default="Active")
 	class Meta:
 		db_table="Employee"
 	def __str__(self):

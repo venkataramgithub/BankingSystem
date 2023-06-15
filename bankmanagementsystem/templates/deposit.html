@@ -33,11 +33,11 @@
 			<form method="post" action="/completedeposit/" enctype="multipart/form-data"> 
 				{% csrf_token %}
 			<tr>
-				<td><input type="text" name="accountno" value="{{form.AccountNumber}}" style="outline: none;border: 1px solid rgba(0, 0, 0,.3);padding: 8px;width:100%;height:25px;"></td>
-				<td><input type="text" name="custormername" value="{{customerform.CustomerName}}" style="outline: none;border: 1px solid rgba(0, 0, 0,.3);padding: 8px;width:100%;height:25px;"></td>
-				<td><input type="text" name="balance" value="{{form.Balance}}" style="outline: none;border: 1px solid rgba(0, 0, 0,.3);padding: 8px;width:100%;height:25px;"></td>
-				<td><input type="text" name="amount" placeholder="Enter Deposit Amount" style="outline: none;border: 1px solid rgba(0, 0, 0,.3);padding: 8px;width:100%;height:25px;"></td>
-				<td><button style="outline: none;border: 1px solid rgba(0, 0, 0,.3);font-size:18px;padding:5px;width:100%;height:35px;">submit</button></td>
+				<td><input type="text" name="accountno" value="{{form.AccountNumber}}" style="outline: none;border:none;border-bottom: 1px solid rgba(0, 0, 0,.1);padding: 8px;width:100%;height:25px;"></td>
+				<td><input type="text" name="custormername" value="{{customerform.CustomerName}}" style="outline: none;border:none;border-bottom: 1px solid rgba(0, 0, 0,.1);padding: 8px;width:100%;height:25px;"></td>
+				<td><input type="text" name="balance" value="{{form.Balance}}" style="outline: none;border:none;border-bottom: 1px solid rgba(0, 0, 0,.1);padding: 8px;width:100%;height:25px;"></td>
+				<td><input type="text" name="amount" placeholder="Enter Deposit Amount" style="outline: none;border:none;border-bottom: 1px solid rgba(0, 0, 0,.1);padding: 8px;width:100%;height:25px;"></td>
+				<td><button style="outline: none;border: 1px solid rgba(0, 0, 0,.1);font-size:18px;padding:5px;width:100%;height:35px;">submit</button></td>
 			</tr>
 		</form>
 		</tbody>

@@ -16,13 +16,13 @@
 		<div class="right">
 		</div>
 		<div class="login-form">
+			<i class="fas fa-university"></i>
+			<p>Welcom to Admin Login </p>
 			{% if messages %}
 				{% for message in messages %}
 					<div class="alert-box">{{message}}</div>
 				{% endfor %}
 			{% endif %}
-			<i class="fas fa-university"></i>
-			<p>Welcom to Admin Login </p>
 			<form method="post" action="" enctype="multipart/form-data" autocomplete="off">
 				{% csrf_token %}
 				<div class="form-group">
